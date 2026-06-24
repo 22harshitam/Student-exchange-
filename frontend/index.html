@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UniLearn - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadPopularCohorts(); updateNavbar();">
+
+<!-- NAVBAR -->
+<header class="top-nav">
+  <div>
+    <img src="images/logo.png" class="logo" alt="UniLearn">
+  </div>
+
+  <nav class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="#" onclick="goDashboard()">Dashboard</a>
+    <a href="cohorts.html">Cohorts</a>
+    <a href="library.html">Library</a>
+    <a href="rewards.html">Rewards</a>
+  </nav>
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay">
+
+   
+    <h1 class="hero-title">
+  From peers, <span class="highlight">for progress.</span>
+</h1>
+
+
+    <h2 class="popular-title">Popular Cohorts</h2>
+
+    <!-- 🔑 THIS CONTAINER -->
+    <div class="cohort-grid" id="popularCohorts"></div>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

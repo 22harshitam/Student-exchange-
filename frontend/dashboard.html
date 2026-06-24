@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - UniLearn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="dark-body" id="dashboardPage">
+<main class="main-content">
+
+  <div class="topbar">
+    <a href="index.html" class="back-btn">← Back</a>
+    <h2>Welcome, <span id="username">User</span> 👋</h2>
+  </div>
+
+  <section class="cohort-overview">
+    <h3>📚 Your Cohorts</h3>
+
+    <div class="cohort-stats">
+      <div class="stat-box">
+        <span id="joinedCount">0</span>
+        <span>Joined Cohorts</span>
+      </div>
+
+      <div class="stat-box">
+        <span id="createdCount">0</span>
+        <span>Created Cohorts</span>
+      </div>
+
+      <div class="stat-box">
+        <span id="uniPoints">0</span>
+        <span>UniPoints ⭐</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <h3>✨ Your Skills</h3>
+
+    <div class="skill-card">
+      <h4>🎓 Teaching Skills</h4>
+      <ul id="teachSkills"></ul>
+    </div>
+
+    <div class="skill-card">
+      <h4>📘 Learning Skills</h4>
+      <ul id="learnSkills"></ul>
+    </div>
+  </section>
+  
+  <section class="cohorts-section">
+  <h3>📚 Your Cohorts</h3>
+
+  <div id="cohortList">
+    <!-- cohorts injected here -->
+  </div>
+</section>
+
+
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

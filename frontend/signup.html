@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup - UniLearn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <div class="auth-left">
+      <h2>Create Account</h2>
+      <p class="subtitle">Sign up and join learning cohorts</p>
+
+      <input id="name" placeholder="Full Name">
+      <input id="email" type="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Password">
+      <input id="teachSkills" placeholder="Teaching Skills (comma separated)">
+      <input id="learnSkills" placeholder="Learning Skills (comma separated)">
+
+      <button type="button" onclick="signup()">Signup</button>
+
+      <p class="small">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+    </div>
+
+    <div class="auth-right">
+      <img src="images/hero.jpg" alt="Team learning">
+    </div>
+
+  </div>
+</div>
+
+<!-- ✅ LOAD JS FILE AT THE END -->
+<script src="signup.js"></script>
+
+</body>
+</html>

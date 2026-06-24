@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaderboard - UniLearn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-body">
+
+<div class="dashboard">
+  <aside class="sidebar">
+    <h2 class="logo">UniLearn</h2>
+    <ul>
+      <li onclick="goDashboard()">Dashboard</li>
+      <li onclick="goToCohorts()">Cohorts</li>
+      <li class="active">Leaderboard</li>
+      <li onclick="logout()">Logout</li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <h2>🏆 Leaderboard</h2>
+    <ul id="leaderboardList"></ul>
+  </main>
+</div>
+
+<section class="popular-cohorts">
+  <h2>🔥 Popular Cohorts</h2>
+  <div id="popularCohorts"></div>
+</section>
+
+
+<script src="script.js"></script>
+<script>
+fetch("http://127.0.0.1:5001/api/cohorts/leaderboard")
+  .then(res => res.json())
+  .then(users => {
+    const list = document.getElementById("leaderboardList");
+    users.forEach((u, i) => {
+      list.innerHTML += `<li>${i+1}. ${u.name} — ${u.uniPoints} pts</li>`;
+    });
+  });
+</script>
+
+</body>
+</html>

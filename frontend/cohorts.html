@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cohorts - UniLearn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="cohortsPage">
+
+<body class="dark-body">
+
+  <div class="dashboard">
+    <main class="main-content">
+
+      <!-- BACK BUTTON -->
+      <div class="back-bar">
+       <a href="index.html" class="back-btn">← Back</a>
+
+      </div>
+
+      <!-- COHORT TOP BAR -->
+      <div class="cohort-topbar">
+        <h2>Cohorts</h2>
+
+        <div class="create-cohort">
+          <input
+            id="cohortName"
+            type="text"
+            placeholder="Enter cohort name"
+          />
+          <button class="create-btn" onclick="createCohort()">Create</button>
+
+        </div>
+      </div>
+
+      <!-- COHORT GRID -->
+      <div class="cohort-grid" id="cohortList"></div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    loadCohorts();
+  </script>
+
+</body>
+</html>

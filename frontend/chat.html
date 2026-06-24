@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat – UniLearn</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Socket.io -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+
+<body class="dark-body">
+
+  <div class="app-container">
+
+    <!-- CHAT CARD -->
+    <div class="chat-layout">
+
+      <!-- LEFT : CHAT -->
+      <div class="chat-section">
+
+        <!-- HEADER -->
+        <header class="chat-header">
+          <h2 id="roomTitle">Cohort Room</h2>
+        </header>
+
+        <!-- CHAT BOX -->
+        <div id="chatBox" class="chat-box"></div>
+
+        <!-- SHARE BAR -->
+        <div class="share-bar">
+          <label class="share-btn">
+            📄 PDF
+            <input
+              type="file"
+              id="pdfFile"
+              accept="application/pdf"
+              hidden
+              onchange="sendPdf()"
+            />
+          </label>
+
+          <input
+            type="text"
+            id="linkUrl"
+            placeholder="Paste resource link..."
+          />
+          <button onclick="sendLink()">🔗</button>
+        </div>
+
+        <!-- MESSAGE INPUT -->
+        <div class="chat-input">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="Type your message..."
+            onkeydown="if(event.key==='Enter') sendMessage()"
+          />
+          <button onclick="sendMessage()">Send</button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT : RESOURCES -->
+      <aside class="resource-panel">
+        <h3>📚 Resources</h3>
+        <div id="resourceList"></div>
+      </aside>
+
+    </div>
+
+    <!-- BACK -->
+    <div class="back-wrapper">
+      <button onclick="backToCohorts()">← Back to Cohorts</button>
+    </div>
+
+  </div>
+
+  <!-- MAIN SCRIPT -->
+  <script src="script.js"></script>
+
+  <!-- INIT CHAT (LOCALSTORAGE BASED) -->
+  <script>
+    const cohortName = localStorage.getItem("currentCohortName");
+
+    document.getElementById("roomTitle").innerText =
+      cohortName || "Cohort Room";
+
+    // ✅ init chat (script.js handles cohortId)
+    initChat();
+  </script>
+
+</body>
+</html>
